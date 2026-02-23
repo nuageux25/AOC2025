@@ -24,5 +24,5 @@ def get_elve_position(puzzle: str) -> int|None :
 
 if __name__ == "__main__":
     puzzle=Utils("https://adventofcode.com/2015/day/1/input").get_puzzle()
-    print("Part 1 : The christmas santa will get on floor",get_santa_floor(puzzle),".")
+    print("Part 1 : The Santa claus will get on floor",get_santa_floor(puzzle),".")
     print("Part 2 : The elve will be at position",get_elve_position(puzzle),".")

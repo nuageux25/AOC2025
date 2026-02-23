@@ -27,14 +27,12 @@ Créer un fichier .env avec le cookie obtenue depuis la plateforme après inscri
 AOC_SESSION=your_session_cookie
 
 ## 🚀 Lancer un exercice
-`./scripts/run.sh exo1.py`
+`./scripts/run.sh`
 
 ## 🧠 Concepts pratiqués
 
 - parsing
 - POO
-- properties
-- generator expressions
 - gestion de secrets
 - Docker build context
 - architecture modulaire
