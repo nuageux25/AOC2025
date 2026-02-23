@@ -31,16 +31,39 @@ if __name__ == "__main__":
 
     puzzle = Utils("https://adventofcode.com/2015/day/3/input").get_puzzle()
 
-    points = [Point(0,0)]
-    tmp_point = Point(0,0)
+    santa_map = [Point(0,0)]
+    santa_position = Point(0,0)
 
     for direction in puzzle:
-        tmp_point.move(direction)
-        
-        if point_exist(points,tmp_point):
-            continue
+
+        santa_position.move(direction)
+
+        if not point_exist(santa_map, santa_position):
+            santa_map.append(Point(santa_position.x,santa_position.y))
+
+    print(f"Part 1: The Santa Claus will distribute {len(santa_map)} gifts.")
+
+
+    i=0
+
+    santa_map=[Point(0,0)]
+    santa_position=Point(0,0)
+
+    robot_map=[Point(0,0)]
+    robot_position=Point(0,0)
+
+    for direction in puzzle:
+
+        #santa
+        if i%2==0:
+            santa_position.move(direction)
+            if not point_exist(santa_map,santa_position) and not point_exist(robot_map,santa_position):
+                santa_map.append(Point(santa_position.x,santa_position.y))
+        #robot
         else:
-            points.append(Point(tmp_point.x,tmp_point.y))
-    print(f"Part 1: The Santa Claus will distribute {len(points)} gifts.")
+            robot_position.move(direction)
+            if not point_exist(robot_map,robot_position) and not point_exist(santa_map,robot_position):
+                robot_map.append(Point(robot_position.x,robot_position.y))
+        i += 1
 
-
+    print(len(santa_map)+len(robot_map)-1,"houses will get at least one gift.")
