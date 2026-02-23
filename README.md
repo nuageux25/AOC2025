@@ -27,7 +27,8 @@ Créer un fichier .env avec le cookie obtenue depuis la plateforme après inscri
 AOC_SESSION=your_session_cookie
 
 ## 🚀 Lancer un exercice
-`./scripts/run.sh`
+`cd scripts`
+`./run.sh`
 
 ## 🧠 Concepts pratiqués
 
